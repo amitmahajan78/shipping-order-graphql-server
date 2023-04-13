@@ -1,0 +1,52 @@
+{
+  "shippingOrder": {
+    "shippingOrderId": "0ac2a3cd-0dd8-461e-8323-016941393b28",
+    "shippingOrderStatus": "RECEIVED",
+    "customerName": "John Doe 1",
+    "customerAddress": "123 Main Street, Anytown, USA",
+    "customerContactEmail": "johndoe@email.com",
+    "customerContactPhone": "+447886756876",
+    "purchaseOrderNumber": "POAAA-12345678",
+    "shippingOption": "express",
+    "updateAt": "2023-04-10T12:29:40.091063",
+    "shippingSourceAddress": {
+      "name": "John Doe 1",
+      "line": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "postalCode": "10001",
+      "countryCode": "US",
+      "email": "john.doe@example.com",
+      "phone": "+1-555-555-5555"
+    },
+    "shippingDestinationAddress": {
+      "id": 252,
+      "name": "Jane Smith 1",
+      "line": "456 Park Ave",
+      "city": "London",
+      "state": null,
+      "postalCode": "W1K 1QD",
+      "countryCode": "GB",
+      "email": "jane.smith@example.com",
+      "phone": "+44-20-5555-5555"
+    },
+    "packageDetail": {
+      "productName": "Widget",
+      "productQuantity": 10,
+      "weightValue": 1,
+      "weightUnit": "kg",
+      "length": 10,
+      "width": 5,
+      "height": 3,
+      "dimensionUnit": "IN"
+    },
+    "options": {
+      "shippingMethod": "SEA_FREIGHT",
+      "destinationPort": "Port of Los Angeles",
+      "signatureRequired": true,
+      "incoterms": "FOB",
+      "insuranceAmount": 100,
+      "insuranceCurrency": "USD"
+    }
+  }
+}

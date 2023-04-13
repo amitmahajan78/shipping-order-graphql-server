@@ -1,0 +1,60 @@
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key"])
+
+type Query {
+  shippingOrders(
+    shippingOrderLookupReq: ShippingOrderLookupReq
+  ): [ShippingOrder]
+  shippingOrder(shippingOrderId: String): ShippingOrder
+}
+
+input ShippingOrderLookupReq {
+  purchaseOrderNumber: String
+  customerName: String
+  customerContactEmail: String
+}
+type ShippingOrder @key(fields: "shippingOrderId") {
+  shippingOrderId: String!
+  shippingOrderStatus: String!
+  customerName: String!
+  customerAddress: String!
+  customerContactEmail: String
+  customerContactPhone: String
+  purchaseOrderNumber: String!
+  shippingOption: String!
+  updateAt: String!
+  shippingSourceAddress: Address!
+  shippingDestinationAddress: Address!
+  packageDetail: Package!
+  options: Option!
+}
+
+type Address {
+  name: String!
+  line: String
+  city: String
+  state: String
+  postalCode: String
+  countryCode: String
+  email: String
+  phone: String
+}
+type Package {
+  productName: String!
+  productQuantity: Int!
+  weightValue: Int!
+  weightUnit: String!
+  length: Int!
+  width: Int!
+  height: Int!
+  dimensionUnit: String
+}
+
+type Option {
+  shippingMethod: String
+  destinationPort: String
+  signatureRequired: Boolean
+  incoterms: String
+  insuranceAmount: String
+  insuranceCurrency: String
+}
