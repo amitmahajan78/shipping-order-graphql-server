@@ -16,9 +16,6 @@ class ShippingOrderAPI extends RESTDataSource {
   }
 
   async getShippingOrderById(shippingOrderId) {
-    console.log(
-      'Datasource :: ' + this.get(`shipping_order/uuid/${shippingOrderId}`)
-    );
     return this.get(`shipping_order/uuid/${shippingOrderId}`);
   }
 }

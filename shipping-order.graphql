@@ -22,11 +22,13 @@ type ShippingOrder @key(fields: "shippingOrderId") {
   customerContactPhone: String
   purchaseOrderNumber: String!
   shippingOption: String!
+  paymentTerm: String
   updateAt: String!
   shippingSourceAddress: Address!
   shippingDestinationAddress: Address!
   packageDetail: Package!
   options: Option!
+  shippingOrderStatuses: [ShippingOrderStatuses]
 }
 
 type Address {
@@ -57,4 +59,10 @@ type Option {
   incoterms: String
   insuranceAmount: String
   insuranceCurrency: String
+}
+
+type ShippingOrderStatuses {
+  status: String
+  message: String
+  createdAt: String
 }

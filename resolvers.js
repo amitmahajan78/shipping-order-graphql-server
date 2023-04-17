@@ -7,7 +7,6 @@ const resolvers = {
       );
     },
     shippingOrder: (_, { shippingOrderId }, { dataSources }) => {
-      console.log('resolver :: ' + shippingOrderId);
       return dataSources.shippingOrderAPI.getShippingOrderById(shippingOrderId);
     },
   },
