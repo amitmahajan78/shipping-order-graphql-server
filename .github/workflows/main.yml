@@ -2,8 +2,7 @@ name: Shipping Order GraphQL Server CI
 
 on:
   push:
-    branches:
-      master
+    branches: ["main"]
 
 jobs:
   build:
