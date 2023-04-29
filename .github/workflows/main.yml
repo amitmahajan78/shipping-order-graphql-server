@@ -1,1 +1,26 @@
+name: Shipping Order GraphQL Server CI
 
+on:
+  push:
+    branches:
+      master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Login to docker hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and tag the Docker image
+        run: |
+          docker build -t shipping-order-graphql-server .
+          docker tag shipping-order-graphql-server ${{ secrets.DOCKERHUB_USERNAME }}/shipping-order-graphql-server:latest
+      - name: Push docker image to docker hub
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/shipping-order-graphql-server:latest
